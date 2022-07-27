@@ -1,0 +1,38 @@
+﻿@using SampleAppWeb.Uow.Models
+@model AdequateShop
+
+@{
+    ViewData["Title"] = "Student Index Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Tourist</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div>
+    <a class="btn btn-primary" asp-area="" asp-controller="Tourist" asp-action="Create">Crea un nuovo tourist</a>
+</div>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Mail</th>
+                <th scope="col">Location</th>
+                <th scope="col">CreatedAt</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Data)
+            {
+                <tr>
+                    <td>@item.TouristName</td>
+                    <td>@item.TouristEmail</td>
+                    <td>@item.TouristLocation</td>
+                    <td>@item.Createdat</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

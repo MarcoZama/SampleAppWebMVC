@@ -1,0 +1,38 @@
+﻿@model SampleAppWeb.Models.StudentsViewModel
+
+@{
+    ViewData["Title"] = "Student Index Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Model.Title</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div>
+    <a class="btn btn-primary" asp-area="" asp-controller="Student" asp-action="Create">Crea un nuovo studente</a>
+
+</div>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Addres</th>
+                <th>Enrollment Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Students)
+            {
+                <tr>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Address</td>
+                    <td>@item.EnrollmentDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

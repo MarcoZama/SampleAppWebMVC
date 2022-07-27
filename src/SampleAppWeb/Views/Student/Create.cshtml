@@ -1,0 +1,26 @@
+﻿@model CreateStudentViewModel
+
+@{
+}
+
+<p>Inserisci un nuovo studente</p>
+
+<form method="post">
+     Nome:
+    <input asp-for="FirstName" class="form-control"/>
+    <span asp-validation-for="FirstName" class="text-danger"></span>
+
+
+     Cognome:
+    <input asp-for="LastName" class="form-control"/>
+
+     Data:
+    <input asp-for="EnrollmentDate" class="form-control"/>
+
+     Indirizzo:
+    <input asp-for="Address" class="form-control"/>
+        <span asp-validation-for="Address" class="text-danger"></span>
+
+
+    <input type="submit" class="btn btn-warning" />
+</form>
